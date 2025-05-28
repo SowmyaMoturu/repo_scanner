@@ -1,0 +1,166 @@
+{
+  "functions": [
+    {
+      "object": null,
+      "method": "constructor",
+      "class_name": "CustomWorld",
+      "parent_class": null,
+      "enclosing_function": null,
+      "filepath": "src/setup/world.ts",
+      "line": 32,
+      "call_chain": [],
+      "params": [
+        "options: IWorldOptions"
+      ]
+    },
+    {
+      "object": "super",
+      "method": null,
+      "line": 33,
+      "enclosing_function": "constructor",
+      "filepath": "src/setup/world.ts",
+      "call_chain": [
+        [
+          "src/setup/world.ts",
+          "constructor"
+        ]
+      ],
+      "class_name": "CustomWorld",
+      "parent_class": null,
+      "args": [
+        "options"
+      ]
+    },
+    {
+      "object": null,
+      "method": "saveResponse",
+      "class_name": "CustomWorld",
+      "parent_class": null,
+      "enclosing_function": null,
+      "filepath": "src/setup/world.ts",
+      "line": 37,
+      "call_chain": [],
+      "params": [
+        "key: string",
+        "response: Response"
+      ]
+    },
+    {
+      "object": "response",
+      "method": "json",
+      "line": 39,
+      "enclosing_function": "saveResponse",
+      "filepath": "src/setup/world.ts",
+      "call_chain": [
+        [
+          "src/setup/world.ts",
+          "saveResponse"
+        ]
+      ],
+      "class_name": "CustomWorld",
+      "parent_class": null,
+      "args": []
+    },
+    {
+      "object": "this",
+      "method": "responseData.set",
+      "line": 40,
+      "enclosing_function": "saveResponse",
+      "filepath": "src/setup/world.ts",
+      "call_chain": [
+        [
+          "src/setup/world.ts",
+          "saveResponse"
+        ]
+      ],
+      "class_name": "CustomWorld",
+      "parent_class": null,
+      "args": [
+        "key",
+        "data"
+      ]
+    },
+    {
+      "object": "console",
+      "method": "error",
+      "line": 42,
+      "enclosing_function": "saveResponse",
+      "filepath": "src/setup/world.ts",
+      "call_chain": [
+        [
+          "src/setup/world.ts",
+          "saveResponse"
+        ]
+      ],
+      "class_name": "CustomWorld",
+      "parent_class": null,
+      "args": [
+        "`Failed to parse response for key ${key}:`",
+        "error"
+      ]
+    },
+    {
+      "object": "this",
+      "method": "responseData.set",
+      "line": 43,
+      "enclosing_function": "saveResponse",
+      "filepath": "src/setup/world.ts",
+      "call_chain": [
+        [
+          "src/setup/world.ts",
+          "saveResponse"
+        ]
+      ],
+      "class_name": "CustomWorld",
+      "parent_class": null,
+      "args": [
+        "key",
+        "null"
+      ]
+    },
+    {
+      "object": null,
+      "method": "getResponseData",
+      "class_name": "CustomWorld",
+      "parent_class": null,
+      "enclosing_function": null,
+      "filepath": "src/setup/world.ts",
+      "line": 47,
+      "call_chain": [],
+      "params": [
+        "key: string"
+      ]
+    },
+    {
+      "object": "this",
+      "method": "responseData.get",
+      "line": 48,
+      "enclosing_function": "getResponseData",
+      "filepath": "src/setup/world.ts",
+      "call_chain": [
+        [
+          "src/setup/world.ts",
+          "getResponseData"
+        ]
+      ],
+      "class_name": "CustomWorld",
+      "parent_class": null,
+      "args": [
+        "key"
+      ]
+    },
+    {
+      "object": "setWorldConstructor",
+      "method": null,
+      "line": 52,
+      "enclosing_function": null,
+      "filepath": "src/setup/world.ts",
+      "call_chain": [],
+      "class_name": "CustomWorld",
+      "parent_class": null,
+      "args": [
+        "CustomWorld"
+      ]
+    }
+  ]
+}

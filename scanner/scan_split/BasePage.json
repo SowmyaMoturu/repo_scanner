@@ -1,0 +1,227 @@
+{
+  "functions": [
+    {
+      "object": null,
+      "method": "constructor",
+      "class_name": "BasePage",
+      "parent_class": null,
+      "enclosing_function": null,
+      "filepath": "src/pages/basepage.ts",
+      "line": 9,
+      "call_chain": [],
+      "params": []
+    },
+    {
+      "object": null,
+      "method": "goto",
+      "class_name": "BasePage",
+      "parent_class": null,
+      "enclosing_function": null,
+      "filepath": "src/pages/basepage.ts",
+      "line": 13,
+      "call_chain": [],
+      "params": [
+        "url: string"
+      ]
+    },
+    {
+      "object": "page",
+      "method": "goto",
+      "line": 14,
+      "enclosing_function": "goto",
+      "filepath": "src/pages/basepage.ts",
+      "call_chain": [
+        [
+          "src/pages/basepage.ts",
+          "goto"
+        ]
+      ],
+      "class_name": "BasePage",
+      "parent_class": null,
+      "args": [
+        "url",
+        "{timeout: 60000, waitUntil: 'domcontentloaded' }"
+      ]
+    },
+    {
+      "object": null,
+      "method": "waitForResponse",
+      "class_name": "BasePage",
+      "parent_class": null,
+      "enclosing_function": null,
+      "filepath": "src/pages/basepage.ts",
+      "line": 18,
+      "call_chain": [],
+      "params": [
+        "url:string",
+        "method:string",
+        "timeout=60000"
+      ]
+    },
+    {
+      "object": "page",
+      "method": "waitForResponse",
+      "line": 20,
+      "enclosing_function": "waitForResponse",
+      "filepath": "src/pages/basepage.ts",
+      "call_chain": [
+        [
+          "src/pages/basepage.ts",
+          "waitForResponse"
+        ]
+      ],
+      "class_name": "BasePage",
+      "parent_class": null,
+      "args": [
+        "response =>\n                response.url().includes(url) \n                    && response.request().method() === method\n                    && (response.request().resourceType() === 'xhr' || response.request().resourceType() === 'fetch')",
+        "{ timeout: timeout }"
+      ]
+    },
+    {
+      "object": "response",
+      "method": "url().includes",
+      "line": 21,
+      "enclosing_function": "waitForResponse",
+      "filepath": "src/pages/basepage.ts",
+      "call_chain": [
+        [
+          "src/pages/basepage.ts",
+          "waitForResponse"
+        ]
+      ],
+      "class_name": "BasePage",
+      "parent_class": null,
+      "args": [
+        "url"
+      ]
+    },
+    {
+      "object": "response",
+      "method": "url",
+      "line": 21,
+      "enclosing_function": "waitForResponse",
+      "filepath": "src/pages/basepage.ts",
+      "call_chain": [
+        [
+          "src/pages/basepage.ts",
+          "waitForResponse"
+        ]
+      ],
+      "class_name": "BasePage",
+      "parent_class": null,
+      "args": []
+    },
+    {
+      "object": "response",
+      "method": "request().method",
+      "line": 22,
+      "enclosing_function": "waitForResponse",
+      "filepath": "src/pages/basepage.ts",
+      "call_chain": [
+        [
+          "src/pages/basepage.ts",
+          "waitForResponse"
+        ]
+      ],
+      "class_name": "BasePage",
+      "parent_class": null,
+      "args": []
+    },
+    {
+      "object": "response",
+      "method": "request",
+      "line": 22,
+      "enclosing_function": "waitForResponse",
+      "filepath": "src/pages/basepage.ts",
+      "call_chain": [
+        [
+          "src/pages/basepage.ts",
+          "waitForResponse"
+        ]
+      ],
+      "class_name": "BasePage",
+      "parent_class": null,
+      "args": []
+    },
+    {
+      "object": "response",
+      "method": "request().resourceType",
+      "line": 23,
+      "enclosing_function": "waitForResponse",
+      "filepath": "src/pages/basepage.ts",
+      "call_chain": [
+        [
+          "src/pages/basepage.ts",
+          "waitForResponse"
+        ]
+      ],
+      "class_name": "BasePage",
+      "parent_class": null,
+      "args": []
+    },
+    {
+      "object": "response",
+      "method": "request",
+      "line": 23,
+      "enclosing_function": "waitForResponse",
+      "filepath": "src/pages/basepage.ts",
+      "call_chain": [
+        [
+          "src/pages/basepage.ts",
+          "waitForResponse"
+        ]
+      ],
+      "class_name": "BasePage",
+      "parent_class": null,
+      "args": []
+    },
+    {
+      "object": "response",
+      "method": "request().resourceType",
+      "line": 23,
+      "enclosing_function": "waitForResponse",
+      "filepath": "src/pages/basepage.ts",
+      "call_chain": [
+        [
+          "src/pages/basepage.ts",
+          "waitForResponse"
+        ]
+      ],
+      "class_name": "BasePage",
+      "parent_class": null,
+      "args": []
+    },
+    {
+      "object": "response",
+      "method": "request",
+      "line": 23,
+      "enclosing_function": "waitForResponse",
+      "filepath": "src/pages/basepage.ts",
+      "call_chain": [
+        [
+          "src/pages/basepage.ts",
+          "waitForResponse"
+        ]
+      ],
+      "class_name": "BasePage",
+      "parent_class": null,
+      "args": []
+    },
+    {
+      "object": "response",
+      "method": "json",
+      "line": 26,
+      "enclosing_function": "waitForResponse",
+      "filepath": "src/pages/basepage.ts",
+      "call_chain": [
+        [
+          "src/pages/basepage.ts",
+          "waitForResponse"
+        ]
+      ],
+      "class_name": "BasePage",
+      "parent_class": null,
+      "args": []
+    }
+  ]
+}

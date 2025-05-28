@@ -1,0 +1,127 @@
+{
+  "User login attempts with different credentials [username=admin, password=wrong, error=Invalid credentials]::505dda7408b377ab56f9947fb2f8d7e3": {
+    "name": "User login attempts with different credentials [username=admin, password=wrong, error=Invalid credentials]",
+    "steps": [
+      {
+        "step_line": "Given the user is on the login page",
+        "matched_expression": "the user is on the login page",
+        "method_links": [
+          "BasePage.goto",
+          "LoginPage.navigateToLogin"
+        ]
+      },
+      {
+        "step_line": "When the user submits login form with username \"admin\" and password \"wrong\"",
+        "matched_expression": null,
+        "method_links": []
+      },
+      {
+        "step_line": "Then the error message \"Invalid credentials\" should be displayed",
+        "matched_expression": null,
+        "method_links": []
+      }
+    ]
+  },
+  "User login attempts with different credentials [username=, password=pass123, error=Username is required]::bb629bad095ca44bd80facd0057449c7": {
+    "name": "User login attempts with different credentials [username=, password=pass123, error=Username is required]",
+    "steps": [
+      {
+        "step_line": "Given the user is on the login page",
+        "matched_expression": "the user is on the login page",
+        "method_links": [
+          "BasePage.goto",
+          "LoginPage.navigateToLogin"
+        ]
+      },
+      {
+        "step_line": "When the user submits login form with username \"\" and password \"pass123\"",
+        "matched_expression": null,
+        "method_links": []
+      },
+      {
+        "step_line": "Then the error message \"Username is required\" should be displayed",
+        "matched_expression": null,
+        "method_links": []
+      }
+    ]
+  },
+  "User login attempts with different credentials [username=user1, password=, error=Password is required]::0cf67ac62fc4fca2ba3c04cf19ff3c61": {
+    "name": "User login attempts with different credentials [username=user1, password=, error=Password is required]",
+    "steps": [
+      {
+        "step_line": "Given the user is on the login page",
+        "matched_expression": "the user is on the login page",
+        "method_links": [
+          "BasePage.goto",
+          "LoginPage.navigateToLogin"
+        ]
+      },
+      {
+        "step_line": "When the user submits login form with username \"user1\" and password \"\"",
+        "matched_expression": null,
+        "method_links": []
+      },
+      {
+        "step_line": "Then the error message \"Password is required\" should be displayed",
+        "matched_expression": null,
+        "method_links": []
+      }
+    ]
+  },
+  "User login attempts with different credentials [username=, password=, error=Username is required]::af21ff35116f25f692e73bf3ac9f1536": {
+    "name": "User login attempts with different credentials [username=, password=, error=Username is required]",
+    "steps": [
+      {
+        "step_line": "Given the user is on the login page",
+        "matched_expression": "the user is on the login page",
+        "method_links": [
+          "BasePage.goto",
+          "LoginPage.navigateToLogin"
+        ]
+      },
+      {
+        "step_line": "When the user submits login form with username \"\" and password \"\"",
+        "matched_expression": null,
+        "method_links": []
+      },
+      {
+        "step_line": "Then the error message \"Username is required\" should be displayed",
+        "matched_expression": null,
+        "method_links": []
+      }
+    ]
+  },
+  "New User Registration::ac1326e4a34f0a1c7aefc85399d3ab94": {
+    "name": "New User Registration",
+    "steps": [
+      {
+        "step_line": "Given I am on the registration page",
+        "matched_expression": "I am on the registration page",
+        "method_links": [
+          "BasePage.goto"
+        ]
+      },
+      {
+        "step_line": "When I fill in the registration form with valid data",
+        "matched_expression": "I fill in the registration form with valid data",
+        "method_links": [
+          "RegisterPage.fillRegisterForm"
+        ]
+      },
+      {
+        "step_line": "And I submit the form",
+        "matched_expression": "I submit the form",
+        "method_links": [
+          "RegisterPage.submitRegisterForm"
+        ]
+      },
+      {
+        "step_line": "Then I validate the registration",
+        "matched_expression": "I validate the registration",
+        "method_links": [
+          "RegisterPage.validateRegistration"
+        ]
+      }
+    ]
+  }
+}

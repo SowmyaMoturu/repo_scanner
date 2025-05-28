@@ -1,0 +1,567 @@
+{
+  "functions": [
+    {
+      "object": null,
+      "method": "constructor",
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "enclosing_function": null,
+      "filepath": "src/pages/register.page.ts",
+      "line": 22,
+      "call_chain": [],
+      "params": []
+    },
+    {
+      "object": "super",
+      "method": null,
+      "line": 23,
+      "enclosing_function": "constructor",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "constructor"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": []
+    },
+    {
+      "object": null,
+      "method": "fillRegisterForm",
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "enclosing_function": null,
+      "filepath": "src/pages/register.page.ts",
+      "line": 27,
+      "call_chain": [],
+      "params": [
+        "world:ScenarioWorld",
+        "firstname: string",
+        "lastname: string",
+        "email: string",
+        "password: string"
+      ]
+    },
+    {
+      "object": "page",
+      "method": "fill",
+      "line": 30,
+      "enclosing_function": "fillRegisterForm",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "fillRegisterForm"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "locators.firstname",
+        "firstname"
+      ]
+    },
+    {
+      "object": "page",
+      "method": "fill",
+      "line": 31,
+      "enclosing_function": "fillRegisterForm",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "fillRegisterForm"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "locators.lastname",
+        "lastname"
+      ]
+    },
+    {
+      "object": "page",
+      "method": "fill",
+      "line": 32,
+      "enclosing_function": "fillRegisterForm",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "fillRegisterForm"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "locators.email",
+        "email"
+      ]
+    },
+    {
+      "object": "page",
+      "method": "fill",
+      "line": 33,
+      "enclosing_function": "fillRegisterForm",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "fillRegisterForm"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "locators.password",
+        "password"
+      ]
+    },
+    {
+      "object": "page",
+      "method": "fill",
+      "line": 34,
+      "enclosing_function": "fillRegisterForm",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "fillRegisterForm"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "locators.confirm_password",
+        "password"
+      ]
+    },
+    {
+      "object": null,
+      "method": "submitRegisterForm",
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "enclosing_function": null,
+      "filepath": "src/pages/register.page.ts",
+      "line": 38,
+      "call_chain": [],
+      "params": []
+    },
+    {
+      "object": "page",
+      "method": "getByRole('button', { name: locators.submit }).click",
+      "line": 39,
+      "enclosing_function": "submitRegisterForm",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "submitRegisterForm"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": []
+    },
+    {
+      "object": "page",
+      "method": "getByRole",
+      "line": 39,
+      "enclosing_function": "submitRegisterForm",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "submitRegisterForm"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "'button'",
+        "{ name: locators.submit }"
+      ]
+    },
+    {
+      "object": "page",
+      "method": "waitForLoadState",
+      "line": 40,
+      "enclosing_function": "submitRegisterForm",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "submitRegisterForm"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "'networkidle'"
+      ]
+    },
+    {
+      "object": null,
+      "method": "validateRegistration",
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "enclosing_function": null,
+      "filepath": "src/pages/register.page.ts",
+      "line": 43,
+      "call_chain": [],
+      "params": [
+        "firstName: string",
+        "lastName: string",
+        "email: string"
+      ]
+    },
+    {
+      "object": "page",
+      "method": "locator(locators.successMessage).textContent",
+      "line": 44,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": []
+    },
+    {
+      "object": "page",
+      "method": "locator",
+      "line": 44,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "locators.successMessage"
+      ]
+    },
+    {
+      "object": "expect(successMessage)",
+      "method": "toContain",
+      "line": 47,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "'Th you for registing'"
+      ]
+    },
+    {
+      "object": "expect",
+      "method": null,
+      "line": 47,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "successMessage"
+      ]
+    },
+    {
+      "object": "page",
+      "method": "url",
+      "line": 50,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": []
+    },
+    {
+      "object": "console",
+      "method": "log",
+      "line": 51,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "`Current URL: ${currentUrl}`"
+      ]
+    },
+    {
+      "object": "expect(currentUrl)",
+      "method": "toContain",
+      "line": 52,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "'/customer/account/'"
+      ]
+    },
+    {
+      "object": "expect",
+      "method": null,
+      "line": 52,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "currentUrl"
+      ]
+    },
+    {
+      "object": "page",
+      "method": "locator(locators.welcomeMessage).textContent",
+      "line": 55,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": []
+    },
+    {
+      "object": "page",
+      "method": "locator",
+      "line": 55,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "locators.welcomeMessage"
+      ]
+    },
+    {
+      "object": "expect(welcomeMessage)",
+      "method": "toContain",
+      "line": 56,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "firstName"
+      ]
+    },
+    {
+      "object": "expect",
+      "method": null,
+      "line": 56,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "welcomeMessage"
+      ]
+    },
+    {
+      "object": "expect(welcomeMessage)",
+      "method": "toContain",
+      "line": 57,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "lastName"
+      ]
+    },
+    {
+      "object": "expect",
+      "method": null,
+      "line": 57,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "welcomeMessage"
+      ]
+    },
+    {
+      "object": "page",
+      "method": "locator(locators.accountInfo).textContent",
+      "line": 60,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": []
+    },
+    {
+      "object": "page",
+      "method": "locator",
+      "line": 60,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "locators.accountInfo"
+      ]
+    },
+    {
+      "object": "expect(accountInfo)",
+      "method": "toContain",
+      "line": 61,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "email"
+      ]
+    },
+    {
+      "object": "expect",
+      "method": null,
+      "line": 61,
+      "enclosing_function": "validateRegistration",
+      "filepath": "src/pages/register.page.ts",
+      "call_chain": [
+        [
+          "src/pages/register.page.ts",
+          "validateRegistration"
+        ]
+      ],
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "args": [
+        "accountInfo"
+      ]
+    }
+  ],
+  "locators": {
+    "firstname": "#firstname",
+    "lastname": "#lastname",
+    "email": "#email_address",
+    "password": "#password",
+    "confirm_password": "#password-confirmation",
+    "submit": "Create an Account",
+    "successMessage": ".message-success",
+    "welcomeMessage": ".box-information .box-content",
+    "accountInfo": ".box-information .box-content"
+  },
+  "test_data_references": [
+    {
+      "variable": "world",
+      "property": "data",
+      "access": "set",
+      "line": 28,
+      "filepath": "src/pages/register.page.ts",
+      "enclosing_function": "fillRegisterForm"
+    },
+    {
+      "variable": "world",
+      "property": "data",
+      "access": "get",
+      "line": 35,
+      "filepath": "src/pages/register.page.ts",
+      "enclosing_function": null
+    }
+  ]
+}

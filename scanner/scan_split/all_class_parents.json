@@ -1,0 +1,8 @@
+{
+  "RegisterPage": "BasePage",
+  "LoginPage": "BasePage",
+  "PageObjects": null,
+  "BasePage": null,
+  "CustomWorld": "World",
+  "APIService": null
+}

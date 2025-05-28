@@ -1,0 +1,398 @@
+[
+  {
+    "step_function": "Given",
+    "expression": "the user is on the login page",
+    "location": "src/step-definitions/login.defs.ts:8",
+    "calls": [
+      {
+        "object": "pageObjects",
+        "method": "LoginPage.goto",
+        "args": [
+          "''"
+        ],
+        "control_flow": [],
+        "line": 9,
+        "method_link": "BasePage.goto"
+      },
+      {
+        "object": "pageObjects",
+        "method": "LoginPage.navigateToLogin",
+        "args": [],
+        "control_flow": [],
+        "line": 10,
+        "method_link": "LoginPage.navigateToLogin"
+      }
+    ],
+    "params": []
+  },
+  {
+    "step_function": "When",
+    "expression": "the user submits login form with username {string} and password {string}",
+    "location": "src/step-definitions/login.defs.ts:13",
+    "calls": [
+      {
+        "object": "username",
+        "method": "trim",
+        "args": [],
+        "control_flow": [
+          {
+            "type": "ternary_expression",
+            "start_line": 16,
+            "end_line": 16,
+            "preview": "username ? username.trim() : \"\"",
+            "condition": "username",
+            "consequent": {
+              "start_line": 16,
+              "end_line": 16,
+              "preview": "username.trim()"
+            },
+            "alternate": {
+              "start_line": 16,
+              "end_line": 16,
+              "preview": "\"\""
+            }
+          },
+          {
+            "type": "if_statement",
+            "start_line": 20,
+            "end_line": 24,
+            "preview": "if (password) {       await pageObjects.LoginPage.enterPassword(password);     }...",
+            "condition": "(password)",
+            "consequent": {
+              "start_line": 20,
+              "end_line": 22,
+              "preview": "{       await pageObjects.LoginPage.enterPassword(password);     }"
+            },
+            "alternate": {
+              "start_line": 22,
+              "end_line": 24,
+              "preview": "else {       console.log(\"\u26d4 No password provided \u2014 skipping field.\");     }"
+            }
+          }
+        ],
+        "line": 16,
+        "method_link": null
+      },
+      {
+        "object": "pageObjects",
+        "method": "LoginPage.enterUsername",
+        "args": [
+          "username"
+        ],
+        "control_flow": [
+          {
+            "type": "ternary_expression",
+            "start_line": 16,
+            "end_line": 16,
+            "preview": "username ? username.trim() : \"\"",
+            "condition": "username",
+            "consequent": {
+              "start_line": 16,
+              "end_line": 16,
+              "preview": "username.trim()"
+            },
+            "alternate": {
+              "start_line": 16,
+              "end_line": 16,
+              "preview": "\"\""
+            }
+          },
+          {
+            "type": "if_statement",
+            "start_line": 20,
+            "end_line": 24,
+            "preview": "if (password) {       await pageObjects.LoginPage.enterPassword(password);     }...",
+            "condition": "(password)",
+            "consequent": {
+              "start_line": 20,
+              "end_line": 22,
+              "preview": "{       await pageObjects.LoginPage.enterPassword(password);     }"
+            },
+            "alternate": {
+              "start_line": 22,
+              "end_line": 24,
+              "preview": "else {       console.log(\"\u26d4 No password provided \u2014 skipping field.\");     }"
+            }
+          }
+        ],
+        "line": 17,
+        "method_link": "LoginPage.enterUsername"
+      },
+      {
+        "object": "pageObjects",
+        "method": "LoginPage.enterPassword",
+        "args": [
+          "password"
+        ],
+        "control_flow": [
+          {
+            "type": "ternary_expression",
+            "start_line": 16,
+            "end_line": 16,
+            "preview": "username ? username.trim() : \"\"",
+            "condition": "username",
+            "consequent": {
+              "start_line": 16,
+              "end_line": 16,
+              "preview": "username.trim()"
+            },
+            "alternate": {
+              "start_line": 16,
+              "end_line": 16,
+              "preview": "\"\""
+            }
+          },
+          {
+            "type": "if_statement",
+            "start_line": 20,
+            "end_line": 24,
+            "preview": "if (password) {       await pageObjects.LoginPage.enterPassword(password);     }...",
+            "condition": "(password)",
+            "consequent": {
+              "start_line": 20,
+              "end_line": 22,
+              "preview": "{       await pageObjects.LoginPage.enterPassword(password);     }"
+            },
+            "alternate": {
+              "start_line": 22,
+              "end_line": 24,
+              "preview": "else {       console.log(\"\u26d4 No password provided \u2014 skipping field.\");     }"
+            }
+          }
+        ],
+        "line": 21,
+        "method_link": "LoginPage.enterPassword"
+      },
+      {
+        "object": "console",
+        "method": "log",
+        "args": [
+          "\"\u26d4 No password provided \u2014 skipping field.\""
+        ],
+        "control_flow": [
+          {
+            "type": "ternary_expression",
+            "start_line": 16,
+            "end_line": 16,
+            "preview": "username ? username.trim() : \"\"",
+            "condition": "username",
+            "consequent": {
+              "start_line": 16,
+              "end_line": 16,
+              "preview": "username.trim()"
+            },
+            "alternate": {
+              "start_line": 16,
+              "end_line": 16,
+              "preview": "\"\""
+            }
+          },
+          {
+            "type": "if_statement",
+            "start_line": 20,
+            "end_line": 24,
+            "preview": "if (password) {       await pageObjects.LoginPage.enterPassword(password);     }...",
+            "condition": "(password)",
+            "consequent": {
+              "start_line": 20,
+              "end_line": 22,
+              "preview": "{       await pageObjects.LoginPage.enterPassword(password);     }"
+            },
+            "alternate": {
+              "start_line": 22,
+              "end_line": 24,
+              "preview": "else {       console.log(\"\u26d4 No password provided \u2014 skipping field.\");     }"
+            }
+          }
+        ],
+        "line": 23,
+        "method_link": null
+      },
+      {
+        "object": "pageObjects",
+        "method": "LoginPage.clickLogin",
+        "args": [],
+        "control_flow": [
+          {
+            "type": "ternary_expression",
+            "start_line": 16,
+            "end_line": 16,
+            "preview": "username ? username.trim() : \"\"",
+            "condition": "username",
+            "consequent": {
+              "start_line": 16,
+              "end_line": 16,
+              "preview": "username.trim()"
+            },
+            "alternate": {
+              "start_line": 16,
+              "end_line": 16,
+              "preview": "\"\""
+            }
+          },
+          {
+            "type": "if_statement",
+            "start_line": 20,
+            "end_line": 24,
+            "preview": "if (password) {       await pageObjects.LoginPage.enterPassword(password);     }...",
+            "condition": "(password)",
+            "consequent": {
+              "start_line": 20,
+              "end_line": 22,
+              "preview": "{       await pageObjects.LoginPage.enterPassword(password);     }"
+            },
+            "alternate": {
+              "start_line": 22,
+              "end_line": 24,
+              "preview": "else {       console.log(\"\u26d4 No password provided \u2014 skipping field.\");     }"
+            }
+          }
+        ],
+        "line": 26,
+        "method_link": "LoginPage.clickLogin"
+      }
+    ],
+    "params": [
+      "username: string",
+      "password: string"
+    ]
+  },
+  {
+    "step_function": "Then",
+    "expression": "the error message {string} should be displayed",
+    "location": "src/step-definitions/login.defs.ts:30",
+    "calls": [
+      {
+        "object": "pageObjects",
+        "method": "LoginPage.getErrorMessage",
+        "args": [
+          "','",
+          "''",
+          "\"mysceanrio\""
+        ],
+        "control_flow": [],
+        "line": 31,
+        "method_link": "LoginPage.getErrorMessage"
+      },
+      {
+        "object": "assert",
+        "method": "strictEqual",
+        "args": [
+          "actualError?.trim()",
+          "expectedError?.trim()"
+        ],
+        "control_flow": [],
+        "line": 32,
+        "method_link": null
+      },
+      {
+        "object": "actualError?",
+        "method": "trim",
+        "args": [],
+        "control_flow": [],
+        "line": 32,
+        "method_link": null
+      },
+      {
+        "object": "expectedError?",
+        "method": "trim",
+        "args": [],
+        "control_flow": [],
+        "line": 32,
+        "method_link": null
+      }
+    ],
+    "params": [
+      "expectedError: string"
+    ]
+  },
+  {
+    "step_function": "Given",
+    "expression": "I am on the registration page",
+    "location": "src/step-definitions/register.def.ts:8",
+    "calls": [
+      {
+        "object": "pageObjects",
+        "method": "RegisterPage.goto",
+        "args": [
+          "\"customer/account/create/\""
+        ],
+        "control_flow": [],
+        "line": 9,
+        "method_link": "BasePage.goto"
+      }
+    ],
+    "params": []
+  },
+  {
+    "step_function": "When",
+    "expression": "I fill in the registration form with valid data",
+    "location": "src/step-definitions/register.def.ts:12",
+    "calls": [
+      {
+        "object": "dataTable",
+        "method": "hashes",
+        "args": [],
+        "control_flow": [],
+        "line": 13,
+        "method_link": null
+      },
+      {
+        "object": "pageObjects",
+        "method": "RegisterPage.fillRegisterForm",
+        "args": [
+          "this",
+          "data.firstname",
+          "data.lastname",
+          "data.email",
+          "data.password"
+        ],
+        "control_flow": [],
+        "line": 15,
+        "method_link": "RegisterPage.fillRegisterForm"
+      }
+    ],
+    "params": [
+      "this: ScenarioWorld",
+      "dataTable"
+    ]
+  },
+  {
+    "step_function": "When",
+    "expression": "I submit the form",
+    "location": "src/step-definitions/register.def.ts:18",
+    "calls": [
+      {
+        "object": "pageObjects",
+        "method": "RegisterPage.submitRegisterForm",
+        "args": [],
+        "control_flow": [],
+        "line": 19,
+        "method_link": "RegisterPage.submitRegisterForm"
+      }
+    ],
+    "params": []
+  },
+  {
+    "step_function": "Then",
+    "expression": "I validate the registration",
+    "location": "src/step-definitions/register.def.ts:22",
+    "calls": [
+      {
+        "object": "pageObjects",
+        "method": "RegisterPage.validateRegistration",
+        "args": [
+          "this.data.firstname",
+          "this.data.lastname",
+          "this.data.email"
+        ],
+        "control_flow": [],
+        "line": 23,
+        "method_link": "RegisterPage.validateRegistration"
+      }
+    ],
+    "params": [
+      "this:ScenarioWorld"
+    ]
+  }
+]
