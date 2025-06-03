@@ -1,0 +1,44 @@
+import json
+import os
+from langchain.schema import Document
+
+def load_chunks():
+    chunks = []
+
+    # Step-defs
+    with open("scanner/scan_split/all_step_definitions_linked.json") as f:
+        step_defs = json.load(f)
+    for step in step_defs:
+        code = step.get("preview") or step.get("expression", "")
+        chunks.append(Document(
+            page_content=code,
+            metadata={
+                "type": "step_def",
+                "expression": step.get("expression"),
+                "location": step.get("location"),
+                "calls": step.get("calls", [])
+            }
+        ))
+
+    # POM/class methods
+    for fname in os.listdir("scanner/scan_split"):
+        if fname.endswith(".json") and fname not in [
+            "all_step_definitions_linked.json", "all_step_definitions.json",
+            "method_file_index.json", "all_class_parents.json"
+        ]:
+            with open(os.path.join("scanner/scan_split", fname)) as f:
+                data = json.load(f)
+            for func in data.get("functions", []):
+                code = func.get("preview") or func.get("method", "")
+                chunks.append(Document(
+                    page_content=code,
+                    metadata={
+                        "type": "pom_method",
+                        "class": func.get("class_name"),
+                        "method": func.get("method"),
+                        "filepath": func.get("filepath"),
+                        "line": func.get("line"),
+                        "params": func.get("params", [])
+                    }
+                ))
+    return chunks
