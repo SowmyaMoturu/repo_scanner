@@ -1,26 +1,22 @@
 {
   "functions": [
     {
-      "object": null,
       "method": "RegisterPage",
       "class_name": "PageObjects",
       "parent_class": null,
-      "enclosing_function": null,
       "filepath": "src/pages/pageobjects.ts",
       "line": 6,
-      "call_chain": [],
-      "params": []
+      "params": [],
+      "code": "public get RegisterPage() {\n        return new RegisterPage();\n    }"
     },
     {
-      "object": null,
       "method": "LoginPage",
       "class_name": "PageObjects",
       "parent_class": null,
-      "enclosing_function": null,
       "filepath": "src/pages/pageobjects.ts",
       "line": 10,
-      "call_chain": [],
-      "params": []
+      "params": [],
+      "code": "public get LoginPage(){\n        return new LoginPage()\n    }"
     }
   ]
 }

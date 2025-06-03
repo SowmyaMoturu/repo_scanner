@@ -1,3 +1,4 @@
+from scanner.build_map.build_feature_map import build_feature_map
 from scanner.scanners.page_scanner import scan_multiple_directories
 from scanner.scanners.step_scanner import scan_step_definitions
 from scanner.build_map.method_index import build_index
@@ -14,3 +15,4 @@ if __name__ == "__main__":
     scan_step_definitions("src/step-definitions")
     build_index()
     get_links()
+    build_feature_map("src/features", "scanner/scan_split")

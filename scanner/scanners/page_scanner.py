@@ -67,8 +67,8 @@ def scan_multiple_directories(root_dirs, output_dir="scanner/scan_split"):
 
                     print(f"[PROCESS] Processing {page_class_name} ({file})...")
 
-                    # Functions, test data, locators
-                    functions, test_data, locators_map, _ = extract_function_calls_and_data(
+                    # Functions,  locators, page_actions extraction
+                    functions, locators_map, page_actions = extract_function_calls_and_data(
                         tree, code, path,  all_class_parents, page_class_name=page_class_name)
 
                     # Only write files if there is data
@@ -77,11 +77,11 @@ def scan_multiple_directories(root_dirs, output_dir="scanner/scan_split"):
                         page_data["functions"] = functions
                     if locators_map:
                         page_data["locators"] = locators_map
-                    if test_data:
-                        page_data["test_data_references"] = test_data
-
+                    if page_actions:
+                        page_data["page_actions"] = page_actions
+                    
                     if not page_data:
-                        print(f"[SKIP] {file}: No functions, locators, or test data found for {page_class_name}.")
+                        print(f"[SKIP] {file}: No functions, locators found for {page_class_name}.")
                         continue
 
                     all_page_data[page_class_name] = page_data

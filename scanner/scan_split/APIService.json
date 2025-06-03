@@ -1,106 +1,24 @@
 {
   "functions": [
     {
-      "object": null,
       "method": "constructor",
       "class_name": "APIService",
       "parent_class": null,
-      "enclosing_function": null,
       "filepath": "src/api.calls/APIService.ts",
       "line": 8,
-      "call_chain": [],
-      "params": []
+      "params": [],
+      "code": "constructor(){\n\n    }"
     },
     {
-      "object": null,
       "method": "getJsonResponse",
       "class_name": "APIService",
       "parent_class": null,
-      "enclosing_function": null,
       "filepath": "src/api.calls/APIService.ts",
       "line": 11,
-      "call_chain": [],
       "params": [
         "response: APIResponse"
       ],
-      "control_flow": [
-        {
-          "type": "if_statement",
-          "start_line": 12,
-          "end_line": 14,
-          "preview": "if (!response.ok()) {             throw new Error(`Request failed with status ${...",
-          "condition": "(!response.ok())",
-          "consequent": {
-            "start_line": 12,
-            "end_line": 14,
-            "preview": "{             throw new Error(`Request failed with status ${response.status()}: ..."
-          }
-        }
-      ]
-    },
-    {
-      "object": "response",
-      "method": "ok",
-      "line": 12,
-      "enclosing_function": "getJsonResponse",
-      "filepath": "src/api.calls/APIService.ts",
-      "call_chain": [
-        [
-          "src/api.calls/APIService.ts",
-          "getJsonResponse"
-        ]
-      ],
-      "class_name": "APIService",
-      "parent_class": null,
-      "args": []
-    },
-    {
-      "object": "response",
-      "method": "status",
-      "line": 13,
-      "enclosing_function": "getJsonResponse",
-      "filepath": "src/api.calls/APIService.ts",
-      "call_chain": [
-        [
-          "src/api.calls/APIService.ts",
-          "getJsonResponse"
-        ]
-      ],
-      "class_name": "APIService",
-      "parent_class": null,
-      "args": []
-    },
-    {
-      "object": "response",
-      "method": "statusText",
-      "line": 13,
-      "enclosing_function": "getJsonResponse",
-      "filepath": "src/api.calls/APIService.ts",
-      "call_chain": [
-        [
-          "src/api.calls/APIService.ts",
-          "getJsonResponse"
-        ]
-      ],
-      "class_name": "APIService",
-      "parent_class": null,
-      "args": []
-    },
-    {
-      "object": "response",
-      "method": "json",
-      "line": 15,
-      "enclosing_function": "getJsonResponse",
-      "filepath": "src/api.calls/APIService.ts",
-      "call_chain": [
-        [
-          "src/api.calls/APIService.ts",
-          "getJsonResponse"
-        ]
-      ],
-      "class_name": "APIService",
-      "parent_class": null,
-      "args": []
+      "code": "async getJsonResponse(response: APIResponse) {\n        if (!response.ok()) {\n            throw new Error(`Request failed with status ${response.status()}: ${response.statusText()}`);\n        }\n        let jsonResponse = await response.json();\n        return jsonResponse;\n    }"
     }
   ]
 }

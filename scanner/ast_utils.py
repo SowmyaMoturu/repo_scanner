@@ -106,101 +106,13 @@ def extract_control_flow(node, code, preview_chars=80):
             walk(child)
     walk(node)
     return control_flows
-    """
-    Recursively extract control flow constructs from the AST node.
-    Returns a list of dicts describing each control flow block,
-    including consequent and alternate for if/ternary, and cases for switch.
-    """
-    control_flows = []
 
-    def walk(n):
-        if n.type in ("if_statement", "switch_statement", "ternary_expression",
-                      "for_statement", "while_statement", "do_statement",
-                      "for_in_statement", "for_of_statement"):
-            flow = {
-                "type": n.type,
-                "start_line": n.start_point[0] + 1,
-                "end_line": n.end_point[0] + 1,
-                "source": code[n.start_byte:n.end_byte].decode()
-            }
-            # --- If statement ---
-            if n.type == "if_statement":
-                cond = n.child_by_field_name("condition")
-                flow["condition"] = code[cond.start_byte:cond.end_byte].decode() if cond else None
-                consequent = n.child_by_field_name("consequence")
-                if consequent:
-                    flow["consequent"] = code[consequent.start_byte:consequent.end_byte].decode()
-                alternate = n.child_by_field_name("alternative")
-                if alternate:
-                    flow["alternate"] = code[alternate.start_byte:alternate.end_byte].decode()
-            # --- Switch statement ---
-            if n.type == "switch_statement":
-                cond = n.child_by_field_name("value")
-                flow["condition"] = code[cond.start_byte:cond.end_byte].decode() if cond else None
-                # Collect all cases
-                cases = []
-                for child in n.children:
-                    if child.type == "switch_case":
-                        case_val = child.child_by_field_name("value")
-                        case_body = child.child_by_field_name("body")
-                        cases.append({
-                            "case": code[case_val.start_byte:case_val.end_byte].decode() if case_val else "default",
-                            "body": code[case_body.start_byte:case_body.end_byte].decode() if case_body else ""
-                        })
-                flow["cases"] = cases
-            # --- Loops ---
-            if n.type in ("for_statement", "while_statement", "do_statement", "for_in_statement", "for_of_statement"):
-                cond = n.child_by_field_name("condition")
-                flow["condition"] = code[cond.start_byte:cond.end_byte].decode() if cond else None
-                body = n.child_by_field_name("body")
-                if body:
-                    flow["body"] = code[body.start_byte:body.end_byte].decode()
-            # --- Ternary ---
-            if n.type == "ternary_expression":
-                cond = n.child_by_field_name("condition")
-                flow["condition"] = code[cond.start_byte:cond.end_byte].decode() if cond else None
-                consequent = n.child_by_field_name("consequence")
-                if consequent:
-                    flow["consequent"] = code[consequent.start_byte:consequent.end_byte].decode()
-                alternate = n.child_by_field_name("alternative")
-                if alternate:
-                    flow["alternate"] = code[alternate.start_byte:alternate.end_byte].decode()
-            control_flows.append(flow)
-        for child in n.children:
-            walk(child)
-    walk(node)
-    return control_flows
-    """
-    Recursively extract control flow constructs from the AST node.
-    Returns a list of dicts describing each control flow block.
-    """
-    control_flows = []
 
-    def walk(n):
-        if n.type in ("if_statement", "switch_statement", "ternary_expression",
-                      "for_statement", "while_statement", "do_statement",
-                      "for_in_statement", "for_of_statement"):
-            flow = {
-                "type": n.type,
-                "start_line": n.start_point[0] + 1,
-                "end_line": n.end_point[0] + 1,
-                "source": code[n.start_byte:n.end_byte].decode()
-            }
-            # Optionally, extract condition and body for if/switch/loops
-            if n.type == "if_statement":
-                cond = n.child_by_field_name("condition")
-                flow["condition"] = code[cond.start_byte:cond.end_byte].decode() if cond else None
-            if n.type == "switch_statement":
-                cond = n.child_by_field_name("value")
-                flow["condition"] = code[cond.start_byte:cond.end_byte].decode() if cond else None
-            if n.type in ("for_statement", "while_statement", "do_statement", "for_in_statement", "for_of_statement"):
-                cond = n.child_by_field_name("condition")
-                flow["condition"] = code[cond.start_byte:cond.end_byte].decode() if cond else None
-            if n.type == "ternary_expression":
-                cond = n.child_by_field_name("condition")
-                flow["condition"] = code[cond.start_byte:cond.end_byte].decode() if cond else None
-            control_flows.append(flow)
-        for child in n.children:
-            walk(child)
-    walk(node)
-    return control_flows
+def extract_code_from_file(filepath, line_number, max_lines=50):
+    try:
+        with open(filepath) as f:
+            lines = f.readlines()
+        start = max(0, line_number - 1)
+        return "".join(lines[start:start+max_lines])
+    except Exception:
+        return ""

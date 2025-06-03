@@ -1,0 +1,88 @@
+{
+  "type": "api_intercept_pattern",
+  "pattern": "this.waitForResponse(url, method, timeout)",
+  "example_usage": "await this.waitForResponse('/customer/account/createpost', 'POST', 60000);",
+  "description": "Waits for a network response matching the specified URL and HTTP method, with an optional timeout. Returns the response JSON.",
+  "parameters": [
+    {"name": "url", "type": "string", "desc": "URL substring to match"},
+    {"name": "method", "type": "string", "desc": "HTTP method (e.g., 'POST')"},
+    {"name": "timeout", "type": "number", "desc": "Timeout in milliseconds (default is 60000)"}
+  ],
+  "code": "async waitForResponse(url: string, method: string, timeout = 60000) { ... }"
+}
+{
+  "type": "state_management_pattern_get",
+  "pattern": "const <var> = world.<property>",
+  "example_usage": "const response = world.responseData;",
+  "description": "Retrieves previously stored data from the World object for use in assertions or subsequent actions.",
+  "parameters": [
+    {"name": "var", "type": "string", "desc": "Local variable to assign"},
+    {"name": "property", "type": "string", "desc": "Property name in the World object to retrieve"}
+  ],
+  "code": "// Example: get API response from world\nconst response = world.responseData;"
+}
+{
+  "type": "state_management_pattern_set",
+  "pattern": "world.<property> = <value>",
+  "example_usage": "world.responseData = await this.waitForResponse('/customer/account/createpost', 'POST', 60000);",
+  "description": "Stores data in the World object for later retrieval in other steps or hooks. Typically used to persist API responses, test data, or shared state between steps.",
+  "parameters": [
+    {"name": "property", "type": "string", "desc": "Property name to store the value under"},
+    {"name": "value", "type": "any", "desc": "Value to store (e.g., API response, test data, etc.)"}
+  ],
+  "code": "// Example: store API response in world\nworld.responseData = await this.waitForResponse(...);"
+}
+{
+  "type": "step_definition_pattern",
+  "pattern": "When('<step>', async function(this: ScenarioWorld, dataTable) { ... })",
+  "example_usage": "When('I fill in the registration form with valid data', async function(this: ScenarioWorld, dataTable) {\n  const data = dataTable.hashes()[0];\n  this.data = data;\n  await pageObjects.RegisterPage.fillRegisterForm(this, data.firstname, data.lastname, data.email, data.password);\n});",
+  "description": "Defines a step that uses the ScenarioWorld context (`this`) to manage shared state and pass test data to page object methods.",
+  "parameters": [
+    {"name": "this", "type": "ScenarioWorld", "desc": "Shared state object for the scenario"},
+    {"name": "dataTable", "type": "DataTable", "desc": "Cucumber data table containing test data"}
+  ],
+  "code": "// Example step definition\nWhen('I fill in the registration form with valid data', async function(this: ScenarioWorld, dataTable) {\n  const data = dataTable.hashes()[0];\n  this.data = data;\n  await pageObjects.RegisterPage.fillRegisterForm(this, data.firstname, data.lastname, data.email, data.password);\n});"
+}
+{
+  "type": "assertion_pattern",
+  "pattern": "expect(<actual>).toBe(<expected>)",
+  "example_usage": "expect(response.status()).toBe(200);",
+  "description": "Asserts that the actual value strictly equals the expected value. Commonly used for validating API response codes, UI values, and other outputs.",
+  "parameters": [
+    {"name": "actual", "type": "any", "desc": "Actual value to assert"},
+    {"name": "expected", "type": "any", "desc": "Expected value to compare against"}
+  ],
+  "code": "// Example assertion\nexpect(page.url()).toBe('https://example.com/dashboard');"
+}
+{
+  "type": "navigation_pattern",
+  "pattern": "await page.goto(<url>)",
+  "example_usage": "await page.goto('https://example.com/login');",
+  "description": "Navigates the browser to the specified URL using Playwright.",
+  "parameters": [
+    {"name": "url", "type": "string", "desc": "Destination URL to navigate to"}
+  ],
+  "code": "// Example navigation\nawait page.goto('https://example.com/login');"
+}
+{
+  "type": "assertion_pattern_locator",
+  "pattern": "await expect(<locator>).toHaveText(<text>)\nawait expect(<locator>).toContainText(<text>)\nawait expect(<locator>).toBeVisible()",
+  "example_usage": "await expect(page.locator('#message')).toHaveText('Registration successful');\nawait expect(page.locator('.error')).toContainText('Invalid');\nawait expect(page.locator('#dashboard')).toBeVisible();",
+  "description": "Validates that a page element has specific text content or is visible. Useful Playwright matchers include `toHaveText`, `toContainText`, and `toBeVisible`.",
+  "parameters": [
+    {"name": "locator", "type": "Locator", "desc": "Playwright locator for the element"},
+    {"name": "text", "type": "string", "desc": "Expected text (used with text-based matchers)"}
+  ],
+  "code": "// Example assertions\nawait expect(page.locator('#message')).toHaveText('Registration successful');\nawait expect(page.locator('.error')).toContainText('Invalid');\nawait expect(page.locator('#dashboard')).toBeVisible();"
+}
+{
+  "type": "testdata_pattern",
+  "pattern": "let data = await import('<path/to/json>'); let keyData = data[<testdataKey>];",
+  "example_usage": "let data = await import('../fixtures/testdata/myfile.json');\nlet keyData = data[testdata];",
+  "description": "Dynamically imports a JSON test data file at runtime and extracts a specific dataset using a key. Enables parameterized and data-driven testing.",
+  "parameters": [
+    {"name": "path", "type": "string", "desc": "Relative path to the JSON test data file"},
+    {"name": "testdataKey", "type": "string", "desc": "Key to retrieve a specific dataset from the imported JSON"}
+  ],
+  "code": "// Example: dynamic test data import\nlet data = await import('../fixtures/testdata/myfile.json');\nlet keyData = data[testdata];"
+}

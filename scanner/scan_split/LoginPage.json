@@ -1,553 +1,93 @@
 {
   "functions": [
     {
-      "object": null,
       "method": "constructor",
       "class_name": "LoginPage",
       "parent_class": null,
-      "enclosing_function": null,
       "filepath": "src/pages/loginPage.ts",
       "line": 14,
-      "call_chain": [],
-      "params": []
+      "params": [],
+      "code": "constructor() {\n          super();\n          page = BasePage.page\n      }"
     },
     {
-      "object": "super",
-      "method": null,
-      "line": 15,
-      "enclosing_function": "constructor",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "constructor"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": []
-    },
-    {
-      "object": null,
       "method": "navigateToLogin",
       "class_name": "LoginPage",
       "parent_class": null,
-      "enclosing_function": null,
       "filepath": "src/pages/loginPage.ts",
       "line": 25,
-      "call_chain": [],
-      "params": []
+      "params": [],
+      "code": "async navigateToLogin() {\n    const url = '/login';\n    await page.locator(locators.login_link).click()\n  }"
     },
     {
-      "object": "page",
-      "method": "locator(locators.login_link).click",
-      "line": 27,
-      "enclosing_function": "navigateToLogin",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "navigateToLogin"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": []
-    },
-    {
-      "object": "page",
-      "method": "locator",
-      "line": 27,
-      "enclosing_function": "navigateToLogin",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "navigateToLogin"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": [
-        "locators.login_link"
-      ]
-    },
-    {
-      "object": null,
       "method": "enterUsername",
       "class_name": "LoginPage",
       "parent_class": null,
-      "enclosing_function": null,
       "filepath": "src/pages/loginPage.ts",
       "line": 30,
-      "call_chain": [],
       "params": [
         "username: string"
       ],
-      "control_flow": [
-        {
-          "type": "if_statement",
-          "start_line": 31,
-          "end_line": 35,
-          "preview": "if(username){       await page.locator(locators.username).fill(username)     }el...",
-          "condition": "(username)",
-          "consequent": {
-            "start_line": 31,
-            "end_line": 33,
-            "preview": "{       await page.locator(locators.username).fill(username)     }"
-          },
-          "alternate": {
-            "start_line": 33,
-            "end_line": 35,
-            "preview": "else {       console.log(\"\u26d4 No password provided \u2014 skipping field.\");     }"
-          }
-        }
-      ]
+      "code": "async enterUsername(username: string) {\n    if(username){\n      await page.locator(locators.username).fill(username)\n    }else {\n      console.log(\"\u26d4 No password provided \u2014 skipping field.\");\n    }\n  }"
     },
     {
-      "object": "page",
-      "method": "locator(locators.username).fill",
-      "line": 32,
-      "enclosing_function": "enterUsername",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "enterUsername"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": [
-        "username"
-      ]
-    },
-    {
-      "object": "page",
-      "method": "locator",
-      "line": 32,
-      "enclosing_function": "enterUsername",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "enterUsername"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": [
-        "locators.username"
-      ]
-    },
-    {
-      "object": "console",
-      "method": "log",
-      "line": 34,
-      "enclosing_function": "enterUsername",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "enterUsername"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": [
-        "\"\u26d4 No password provided \u2014 skipping field.\""
-      ]
-    },
-    {
-      "object": null,
       "method": "enterPassword",
       "class_name": "LoginPage",
       "parent_class": null,
-      "enclosing_function": null,
       "filepath": "src/pages/loginPage.ts",
       "line": 38,
-      "call_chain": [],
       "params": [
         "password: string"
       ],
-      "control_flow": [
-        {
-          "type": "ternary_expression",
-          "start_line": 39,
-          "end_line": 39,
-          "preview": "password? password.trim() : \"\"",
-          "condition": "password",
-          "consequent": {
-            "start_line": 39,
-            "end_line": 39,
-            "preview": "password.trim()"
-          },
-          "alternate": {
-            "start_line": 39,
-            "end_line": 39,
-            "preview": "\"\""
-          }
-        }
-      ]
+      "code": "async enterPassword(password: string) {\n    password = password? password.trim() : \"\"\n    await page.locator(locators.password).fill(password)\n  }"
     },
     {
-      "object": "password",
-      "method": "trim",
-      "line": 39,
-      "enclosing_function": "enterPassword",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "enterPassword"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": []
-    },
-    {
-      "object": "page",
-      "method": "locator(locators.password).fill",
-      "line": 40,
-      "enclosing_function": "enterPassword",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "enterPassword"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": [
-        "password"
-      ]
-    },
-    {
-      "object": "page",
-      "method": "locator",
-      "line": 40,
-      "enclosing_function": "enterPassword",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "enterPassword"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": [
-        "locators.password"
-      ]
-    },
-    {
-      "object": null,
       "method": "clickLogin",
       "class_name": "LoginPage",
       "parent_class": null,
-      "enclosing_function": null,
       "filepath": "src/pages/loginPage.ts",
       "line": 43,
-      "call_chain": [],
-      "params": []
+      "params": [],
+      "code": "async clickLogin() {\n    await page.getByRole('button').filter({hasText:\"Sign In\"}).click()\n  }"
     },
     {
-      "object": "page",
-      "method": "getByRole('button').filter({hasText:\"Sign In\"}).click",
-      "line": 44,
-      "enclosing_function": "clickLogin",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "clickLogin"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": []
-    },
-    {
-      "object": "page",
-      "method": "getByRole('button').filter",
-      "line": 44,
-      "enclosing_function": "clickLogin",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "clickLogin"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": [
-        "{hasText:\"Sign In\"}"
-      ]
-    },
-    {
-      "object": "page",
-      "method": "getByRole",
-      "line": 44,
-      "enclosing_function": "clickLogin",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "clickLogin"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": [
-        "'button'"
-      ]
-    },
-    {
-      "object": null,
       "method": "isErrorDisplayed",
       "class_name": "LoginPage",
       "parent_class": null,
-      "enclosing_function": null,
       "filepath": "src/pages/loginPage.ts",
       "line": 47,
-      "call_chain": [],
-      "params": []
+      "params": [],
+      "code": "async isErrorDisplayed() {\n    await page.getByTestId(locators.error).isVisible()\n  }"
     },
     {
-      "object": "page",
-      "method": "getByTestId(locators.error).isVisible",
-      "line": 48,
-      "enclosing_function": "isErrorDisplayed",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "isErrorDisplayed"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": []
-    },
-    {
-      "object": "page",
-      "method": "getByTestId",
-      "line": 48,
-      "enclosing_function": "isErrorDisplayed",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "isErrorDisplayed"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": [
-        "locators.error"
-      ]
-    },
-    {
-      "object": null,
       "method": "getErrorMessage",
       "class_name": "LoginPage",
       "parent_class": null,
-      "enclosing_function": null,
       "filepath": "src/pages/loginPage.ts",
       "line": 51,
-      "call_chain": [],
       "params": [
         "username: string",
         "password: string",
         "testdata:string"
       ],
-      "control_flow": [
-        {
-          "type": "for_in_statement",
-          "start_line": 59,
-          "end_line": 61,
-          "preview": "for(let key in Object.keys(keyData)){       console.log(key + keyData[key])    }",
-          "condition": null,
-          "body": {
-            "start_line": 59,
-            "end_line": 61,
-            "preview": "{       console.log(key + keyData[key])    }"
-          }
-        },
-        {
-          "type": "switch_statement",
-          "start_line": 63,
-          "end_line": 74,
-          "preview": "switch (true) {     case !username && !password:       return 'Username is requi...",
-          "condition": "(true)",
-          "cases": []
-        }
-      ]
+      "code": "async getErrorMessage(username: string, password: string, testdata:string) {\n\n   await expect(page.getByTestId(locators.error)).toBeVisible()\n   expect(this.isErrorDisplayed).toBeTruthy()\n   \n   let data = await import(\"../fixtures/testdata/myfile.json\")\n   let keyData = data[testdata]\n   \n   for(let key in Object.keys(keyData)){\n      console.log(key + keyData[key])\n   }\n\n  switch (true) {\n    case !username && !password:\n      return 'Username is required';\n    case !username:\n      return 'Username is required';\n    case !password:\n      return 'Password is required';\n    case username === 'admin' && password === 'wrong':\n      return 'Invalid credentials';\n    default:\n      return 'Unknown error';\n  }\n}"
     },
     {
-      "object": "expect(page",
-      "method": "getByTestId(locators.error)).toBeVisible",
-      "line": 53,
-      "enclosing_function": "getErrorMessage",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "getErrorMessage"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": []
-    },
-    {
-      "object": "expect",
-      "method": null,
-      "line": 53,
-      "enclosing_function": "getErrorMessage",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "getErrorMessage"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": [
-        "page.getByTestId(locators.error)"
-      ]
-    },
-    {
-      "object": "page",
-      "method": "getByTestId",
-      "line": 53,
-      "enclosing_function": "getErrorMessage",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "getErrorMessage"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": [
-        "locators.error"
-      ]
-    },
-    {
-      "object": "expect(this",
-      "method": "isErrorDisplayed).toBeTruthy",
-      "line": 54,
-      "enclosing_function": "getErrorMessage",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "getErrorMessage"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": []
-    },
-    {
-      "object": "expect",
-      "method": null,
-      "line": 54,
-      "enclosing_function": "getErrorMessage",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "getErrorMessage"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": [
-        "this.isErrorDisplayed"
-      ]
-    },
-    {
-      "object": "import",
-      "method": null,
-      "line": 56,
-      "enclosing_function": "getErrorMessage",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "getErrorMessage"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": [
-        "\"../fixtures/testdata/myfile.json\""
-      ]
-    },
-    {
-      "object": "Object",
-      "method": "keys",
-      "line": 59,
-      "enclosing_function": "getErrorMessage",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "getErrorMessage"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": [
-        "keyData"
-      ]
-    },
-    {
-      "object": "console",
-      "method": "log",
-      "line": 60,
-      "enclosing_function": "getErrorMessage",
-      "filepath": "src/pages/loginPage.ts",
-      "call_chain": [
-        [
-          "src/pages/loginPage.ts",
-          "getErrorMessage"
-        ]
-      ],
-      "class_name": "LoginPage",
-      "parent_class": null,
-      "args": [
-        "key + keyData[key]"
-      ]
-    },
-    {
-      "object": null,
       "method": "getdata",
       "class_name": "LoginPage",
       "parent_class": null,
-      "enclosing_function": null,
       "filepath": "src/pages/loginPage.ts",
       "line": 79,
-      "call_chain": [],
-      "params": []
+      "params": [],
+      "code": "function getdata(){\n  return {\n    username: \"admin\",\n    password: \"password123\",\n    testdata: \"testdata\"\n  };\n}"
     },
     {
-      "object": null,
       "method": "getProcessData",
       "class_name": "LoginPage",
       "parent_class": null,
-      "enclosing_function": null,
       "filepath": "src/pages/loginPage.ts",
       "line": 87,
-      "call_chain": [],
-      "params": []
+      "params": [],
+      "code": "function getProcessData() {\n  return {\n    username: process.env.USERNAME || \"defaultUser\",\n    password: process.env.PASSWORD || \"defaultPass\",\n    testdata: process.env.TESTDATA || \"defaultTestData\"\n  };\n}"
     }
   ],
   "locators": {
@@ -556,14 +96,174 @@
     "password": "#pass",
     "error": "error"
   },
-  "test_data_references": [
+  "page_actions": [
     {
-      "variable": "data",
-      "file": "../fixtures/testdata/myfile.json",
-      "line": 56,
-      "accessed_keys": [],
+      "call": "page.locator(locators.login_link).click",
+      "class_name": "LoginPage",
       "filepath": "src/pages/loginPage.ts",
-      "enclosing_function": null
+      "line": 27,
+      "code": "page.locator(locators.login_link).click()"
+    },
+    {
+      "call": "page.locator",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 27,
+      "code": "page.locator(locators.login_link)"
+    },
+    {
+      "call": "page.locator(locators.login_link).click",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 27,
+      "code": "page.locator(locators.login_link).click()"
+    },
+    {
+      "call": "page.locator",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 27,
+      "code": "page.locator(locators.login_link)"
+    },
+    {
+      "call": "page.locator(locators.username).fill",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 32,
+      "code": "page.locator(locators.username).fill(username)"
+    },
+    {
+      "call": "page.locator",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 32,
+      "code": "page.locator(locators.username)"
+    },
+    {
+      "call": "page.locator(locators.username).fill",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 32,
+      "code": "page.locator(locators.username).fill(username)"
+    },
+    {
+      "call": "page.locator",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 32,
+      "code": "page.locator(locators.username)"
+    },
+    {
+      "call": "page.locator(locators.password).fill",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 40,
+      "code": "page.locator(locators.password).fill(password)"
+    },
+    {
+      "call": "page.locator",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 40,
+      "code": "page.locator(locators.password)"
+    },
+    {
+      "call": "page.locator(locators.password).fill",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 40,
+      "code": "page.locator(locators.password).fill(password)"
+    },
+    {
+      "call": "page.locator",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 40,
+      "code": "page.locator(locators.password)"
+    },
+    {
+      "call": "page.getByRole('button').filter({hasText:\"Sign In\"}).click",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 44,
+      "code": "page.getByRole('button').filter({hasText:\"Sign In\"}).click()"
+    },
+    {
+      "call": "page.getByRole('button').filter",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 44,
+      "code": "page.getByRole('button').filter({hasText:\"Sign In\"})"
+    },
+    {
+      "call": "page.getByRole",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 44,
+      "code": "page.getByRole('button')"
+    },
+    {
+      "call": "page.getByRole('button').filter({hasText:\"Sign In\"}).click",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 44,
+      "code": "page.getByRole('button').filter({hasText:\"Sign In\"}).click()"
+    },
+    {
+      "call": "page.getByRole('button').filter",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 44,
+      "code": "page.getByRole('button').filter({hasText:\"Sign In\"})"
+    },
+    {
+      "call": "page.getByRole",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 44,
+      "code": "page.getByRole('button')"
+    },
+    {
+      "call": "page.getByTestId(locators.error).isVisible",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 48,
+      "code": "page.getByTestId(locators.error).isVisible()"
+    },
+    {
+      "call": "page.getByTestId",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 48,
+      "code": "page.getByTestId(locators.error)"
+    },
+    {
+      "call": "page.getByTestId(locators.error).isVisible",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 48,
+      "code": "page.getByTestId(locators.error).isVisible()"
+    },
+    {
+      "call": "page.getByTestId",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 48,
+      "code": "page.getByTestId(locators.error)"
+    },
+    {
+      "call": "page.getByTestId",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 53,
+      "code": "page.getByTestId(locators.error)"
+    },
+    {
+      "call": "page.getByTestId",
+      "class_name": "LoginPage",
+      "filepath": "src/pages/loginPage.ts",
+      "line": 53,
+      "code": "page.getByTestId(locators.error)"
     }
   ]
 }

@@ -1,0 +1,329 @@
+{
+  "LoginPage.constructor": {
+    "file": "LoginPage.json",
+    "class_name": "LoginPage",
+    "method": "constructor",
+    "details": {
+      "method": "constructor",
+      "class_name": "LoginPage",
+      "parent_class": null,
+      "filepath": "src/pages/loginPage.ts",
+      "line": 14,
+      "params": [],
+      "code": "constructor() {\n          super();\n          page = BasePage.page\n      }"
+    }
+  },
+  "LoginPage.navigateToLogin": {
+    "file": "LoginPage.json",
+    "class_name": "LoginPage",
+    "method": "navigateToLogin",
+    "details": {
+      "method": "navigateToLogin",
+      "class_name": "LoginPage",
+      "parent_class": null,
+      "filepath": "src/pages/loginPage.ts",
+      "line": 25,
+      "params": [],
+      "code": "async navigateToLogin() {\n    const url = '/login';\n    await page.locator(locators.login_link).click()\n  }"
+    }
+  },
+  "LoginPage.enterUsername": {
+    "file": "LoginPage.json",
+    "class_name": "LoginPage",
+    "method": "enterUsername",
+    "details": {
+      "method": "enterUsername",
+      "class_name": "LoginPage",
+      "parent_class": null,
+      "filepath": "src/pages/loginPage.ts",
+      "line": 30,
+      "params": [
+        "username: string"
+      ],
+      "code": "async enterUsername(username: string) {\n    if(username){\n      await page.locator(locators.username).fill(username)\n    }else {\n      console.log(\"\u26d4 No password provided \u2014 skipping field.\");\n    }\n  }"
+    }
+  },
+  "LoginPage.enterPassword": {
+    "file": "LoginPage.json",
+    "class_name": "LoginPage",
+    "method": "enterPassword",
+    "details": {
+      "method": "enterPassword",
+      "class_name": "LoginPage",
+      "parent_class": null,
+      "filepath": "src/pages/loginPage.ts",
+      "line": 38,
+      "params": [
+        "password: string"
+      ],
+      "code": "async enterPassword(password: string) {\n    password = password? password.trim() : \"\"\n    await page.locator(locators.password).fill(password)\n  }"
+    }
+  },
+  "LoginPage.clickLogin": {
+    "file": "LoginPage.json",
+    "class_name": "LoginPage",
+    "method": "clickLogin",
+    "details": {
+      "method": "clickLogin",
+      "class_name": "LoginPage",
+      "parent_class": null,
+      "filepath": "src/pages/loginPage.ts",
+      "line": 43,
+      "params": [],
+      "code": "async clickLogin() {\n    await page.getByRole('button').filter({hasText:\"Sign In\"}).click()\n  }"
+    }
+  },
+  "LoginPage.isErrorDisplayed": {
+    "file": "LoginPage.json",
+    "class_name": "LoginPage",
+    "method": "isErrorDisplayed",
+    "details": {
+      "method": "isErrorDisplayed",
+      "class_name": "LoginPage",
+      "parent_class": null,
+      "filepath": "src/pages/loginPage.ts",
+      "line": 47,
+      "params": [],
+      "code": "async isErrorDisplayed() {\n    await page.getByTestId(locators.error).isVisible()\n  }"
+    }
+  },
+  "LoginPage.getErrorMessage": {
+    "file": "LoginPage.json",
+    "class_name": "LoginPage",
+    "method": "getErrorMessage",
+    "details": {
+      "method": "getErrorMessage",
+      "class_name": "LoginPage",
+      "parent_class": null,
+      "filepath": "src/pages/loginPage.ts",
+      "line": 51,
+      "params": [
+        "username: string",
+        "password: string",
+        "testdata:string"
+      ],
+      "code": "async getErrorMessage(username: string, password: string, testdata:string) {\n\n   await expect(page.getByTestId(locators.error)).toBeVisible()\n   expect(this.isErrorDisplayed).toBeTruthy()\n   \n   let data = await import(\"../fixtures/testdata/myfile.json\")\n   let keyData = data[testdata]\n   \n   for(let key in Object.keys(keyData)){\n      console.log(key + keyData[key])\n   }\n\n  switch (true) {\n    case !username && !password:\n      return 'Username is required';\n    case !username:\n      return 'Username is required';\n    case !password:\n      return 'Password is required';\n    case username === 'admin' && password === 'wrong':\n      return 'Invalid credentials';\n    default:\n      return 'Unknown error';\n  }\n}"
+    }
+  },
+  "LoginPage.getdata": {
+    "file": "LoginPage.json",
+    "class_name": "LoginPage",
+    "method": "getdata",
+    "details": {
+      "method": "getdata",
+      "class_name": "LoginPage",
+      "parent_class": null,
+      "filepath": "src/pages/loginPage.ts",
+      "line": 79,
+      "params": [],
+      "code": "function getdata(){\n  return {\n    username: \"admin\",\n    password: \"password123\",\n    testdata: \"testdata\"\n  };\n}"
+    }
+  },
+  "LoginPage.getProcessData": {
+    "file": "LoginPage.json",
+    "class_name": "LoginPage",
+    "method": "getProcessData",
+    "details": {
+      "method": "getProcessData",
+      "class_name": "LoginPage",
+      "parent_class": null,
+      "filepath": "src/pages/loginPage.ts",
+      "line": 87,
+      "params": [],
+      "code": "function getProcessData() {\n  return {\n    username: process.env.USERNAME || \"defaultUser\",\n    password: process.env.PASSWORD || \"defaultPass\",\n    testdata: process.env.TESTDATA || \"defaultTestData\"\n  };\n}"
+    }
+  },
+  "BasePage.constructor": {
+    "file": "BasePage.json",
+    "class_name": "BasePage",
+    "method": "constructor",
+    "details": {
+      "method": "constructor",
+      "class_name": "BasePage",
+      "parent_class": null,
+      "filepath": "src/pages/basepage.ts",
+      "line": 9,
+      "params": [],
+      "code": "constructor(){\n        page = BasePage.page\n    }"
+    }
+  },
+  "BasePage.goto": {
+    "file": "BasePage.json",
+    "class_name": "BasePage",
+    "method": "goto",
+    "details": {
+      "method": "goto",
+      "class_name": "BasePage",
+      "parent_class": null,
+      "filepath": "src/pages/basepage.ts",
+      "line": 13,
+      "params": [
+        "url: string"
+      ],
+      "code": "async goto(url: string) {\n        await page.goto(url, {timeout: 60000, waitUntil: 'domcontentloaded' });\n\n    }"
+    }
+  },
+  "BasePage.waitForResponse": {
+    "file": "BasePage.json",
+    "class_name": "BasePage",
+    "method": "waitForResponse",
+    "details": {
+      "method": "waitForResponse",
+      "class_name": "BasePage",
+      "parent_class": null,
+      "filepath": "src/pages/basepage.ts",
+      "line": 19,
+      "params": [
+        "url:string",
+        "method:string",
+        "timeout=60000"
+      ],
+      "code": "async waitForResponse(url:string, method:string, timeout=60000){\n        try {\n            const response = await page.waitForResponse(response =>\n                response.url().includes(url) \n                    && response.request().method() === method\n                    && (response.request().resourceType() === 'xhr' || response.request().resourceType() === 'fetch'),\n                { timeout: timeout }\n            );\n            return await response.json();\n        } catch (error) {\n            throw new Error(`Failed to receive response for URL: ${url} with method: ${method} within ${timeout}ms timeout`);\n        }\n    }"
+    }
+  },
+  "APIService.constructor": {
+    "file": "APIService.json",
+    "class_name": "APIService",
+    "method": "constructor",
+    "details": {
+      "method": "constructor",
+      "class_name": "APIService",
+      "parent_class": null,
+      "filepath": "src/api.calls/APIService.ts",
+      "line": 8,
+      "params": [],
+      "code": "constructor(){\n\n    }"
+    }
+  },
+  "APIService.getJsonResponse": {
+    "file": "APIService.json",
+    "class_name": "APIService",
+    "method": "getJsonResponse",
+    "details": {
+      "method": "getJsonResponse",
+      "class_name": "APIService",
+      "parent_class": null,
+      "filepath": "src/api.calls/APIService.ts",
+      "line": 11,
+      "params": [
+        "response: APIResponse"
+      ],
+      "code": "async getJsonResponse(response: APIResponse) {\n        if (!response.ok()) {\n            throw new Error(`Request failed with status ${response.status()}: ${response.statusText()}`);\n        }\n        let jsonResponse = await response.json();\n        return jsonResponse;\n    }"
+    }
+  },
+  "RegisterPage.constructor": {
+    "file": "RegisterPage.json",
+    "class_name": "RegisterPage",
+    "method": "constructor",
+    "details": {
+      "method": "constructor",
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "filepath": "src/pages/register.page.ts",
+      "line": 24,
+      "params": [],
+      "code": "constructor() {\n        super();\n        page = BasePage.page\n    }"
+    }
+  },
+  "RegisterPage.fillRegisterForm": {
+    "file": "RegisterPage.json",
+    "class_name": "RegisterPage",
+    "method": "fillRegisterForm",
+    "details": {
+      "method": "fillRegisterForm",
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "filepath": "src/pages/register.page.ts",
+      "line": 29,
+      "params": [
+        "world:ScenarioWorld",
+        "firstname: string",
+        "lastname: string",
+        "email: string",
+        "password: string"
+      ],
+      "code": "async fillRegisterForm(world:ScenarioWorld, firstname: string, lastname: string, email: string, password: string) {\n        world.data = {\n            firstname: firstname}\n        await page.fill(locators.firstname, firstname);\n        await page.fill(locators.lastname, lastname);\n        await page.fill(locators.email, email);\n        await page.fill(locators.password, password);\n        await page.fill(locators.confirm_password, password);\n\n        //State Data Mangamenet - Storing data in the world object\n        let testData = world.data\n\n        //State Data Mangamenet - Storing Intercepted response data in world\n        world.responseData =  await this.waitForResponse('/customer/account/createpost', 'POST', 60000);\n\n    }"
+    }
+  },
+  "RegisterPage.submitRegisterForm": {
+    "file": "RegisterPage.json",
+    "class_name": "RegisterPage",
+    "method": "submitRegisterForm",
+    "details": {
+      "method": "submitRegisterForm",
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "filepath": "src/pages/register.page.ts",
+      "line": 46,
+      "params": [],
+      "code": "async submitRegisterForm() {\n        await page.getByRole('button', { name: locators.submit }).click();\n        await page.waitForLoadState('networkidle');\n    }"
+    }
+  },
+  "RegisterPage.validateRegistration": {
+    "file": "RegisterPage.json",
+    "class_name": "RegisterPage",
+    "method": "validateRegistration",
+    "details": {
+      "method": "validateRegistration",
+      "class_name": "RegisterPage",
+      "parent_class": null,
+      "filepath": "src/pages/register.page.ts",
+      "line": 51,
+      "params": [
+        "firstName: string",
+        "lastName: string",
+        "email: string"
+      ],
+      "code": "async validateRegistration(firstName: string, lastName: string, email: string) {\n        const successMessage = await page.locator(locators.successMessage).textContent();\n       \n        page.getByTestId(locators.loc1)\n        page.getByRole('button', { name: locators.submit }).click();\n        page.getByTestId(locators.loc1).filter({ hasText: locators.loc3}).click();\n\n        // Validate the success message contains expected text\n        expect(successMessage).toContain('Th you for registing');\n  \n        // Validate we're on the account page\n        const currentUrl = page.url();\n        console.log(`Current URL: ${currentUrl}`);\n        expect(currentUrl).toContain('/customer/account/');\n    \n        // Validate welcome message contains the user's name\n        const welcomeMessage = await page.locator(locators.welcomeMessage).textContent();\n        expect(welcomeMessage).toContain(firstName);\n        expect(welcomeMessage).toContain(lastName);\n    \n        // Validate the email in the account information\n        const accountInfo = await page.locator(locators.accountInfo).textContent();\n        expect(accountInfo).toContain(email);\n    }"
+    }
+  },
+  "CustomWorld.constructor": {
+    "file": "CustomWorld.json",
+    "class_name": "CustomWorld",
+    "method": "constructor",
+    "details": {
+      "method": "constructor",
+      "class_name": "CustomWorld",
+      "parent_class": null,
+      "filepath": "src/setup/world.ts",
+      "line": 33,
+      "params": [
+        "options: IWorldOptions"
+      ],
+      "code": "constructor(options: IWorldOptions) {\n        super(options);\n        this.responseData = new Map();\n    }"
+    }
+  },
+  "CustomWorld.saveResponse": {
+    "file": "CustomWorld.json",
+    "class_name": "CustomWorld",
+    "method": "saveResponse",
+    "details": {
+      "method": "saveResponse",
+      "class_name": "CustomWorld",
+      "parent_class": null,
+      "filepath": "src/setup/world.ts",
+      "line": 38,
+      "params": [
+        "key: string",
+        "response: Response"
+      ],
+      "code": "async saveResponse(key: string, response: Response) {\n        try {\n            const data = await response.json();\n            this.responseData.set(key, data);\n        } catch (error) {\n            console.error(`Failed to parse response for key ${key}:`, error);\n            this.responseData.set(key, null);\n        }\n    }"
+    }
+  },
+  "CustomWorld.getResponseData": {
+    "file": "CustomWorld.json",
+    "class_name": "CustomWorld",
+    "method": "getResponseData",
+    "details": {
+      "method": "getResponseData",
+      "class_name": "CustomWorld",
+      "parent_class": null,
+      "filepath": "src/setup/world.ts",
+      "line": 48,
+      "params": [
+        "key: string"
+      ],
+      "code": "getResponseData(key: string) {\n        return this.responseData.get(key);\n    }"
+    }
+  }
+}

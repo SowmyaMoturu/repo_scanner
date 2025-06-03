@@ -2,8 +2,6 @@
 import os
 import json
 
-
-
 from scanner.extractors.step_defs import extract_step_definitions
 
 def scan_step_definitions(step_def_dir, output_dir="scanner/scan_split"):
@@ -12,7 +10,6 @@ def scan_step_definitions(step_def_dir, output_dir="scanner/scan_split"):
     Also writes all methods defined in each step definition file to all_step_methods.json.
     """
     all_step_defs = []
-    all_step_methods = []
 
     for root, _, files in os.walk(step_def_dir):
         for file in files:
@@ -24,8 +21,7 @@ def scan_step_definitions(step_def_dir, output_dir="scanner/scan_split"):
                 step_info = extract_step_definitions(code, path)
                 if step_info["steps"]:
                     all_step_defs.extend(step_info["steps"])
-                if step_info["methods"]:
-                    all_step_methods.extend(step_info["methods"])
+               
 
     if all_step_defs:
         with open(os.path.join(output_dir, "all_step_definitions.json"), "w") as f:
@@ -33,10 +29,5 @@ def scan_step_definitions(step_def_dir, output_dir="scanner/scan_split"):
         print(f"[WRITE] all_step_definitions.json written from {step_def_dir}.")
     else:
         print(f"[INFO] No step definitions found in {step_def_dir}.")
-    if all_step_methods:
-        with open(os.path.join(output_dir, "all_step_methods.json"), "w") as f:
-            json.dump(all_step_methods, f, indent=2)
-        print(f"[WRITE] all_step_methods.json written from {step_def_dir}.")
-    else:
-        print(f"[INFO] No step methods found in {step_def_dir}.")
-
+  
+   

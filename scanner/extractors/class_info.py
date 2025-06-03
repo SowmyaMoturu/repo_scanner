@@ -2,6 +2,14 @@
 import re
 from scanner.ast_utils import get_node_text, find_class_declarations
 
+def resolve_locator_arg(arg, locators_map):
+    if isinstance(arg, str) and arg.startswith("locators.") or arg.startswith("locators["):
+        key = arg.split(".", 1)[1]
+        resolved = locators_map.get(key)
+        if isinstance(resolved, dict):
+            return resolved.get("value", arg)
+        return resolved or arg
+    return arg
 
 def extract_locators_map(code):
     """

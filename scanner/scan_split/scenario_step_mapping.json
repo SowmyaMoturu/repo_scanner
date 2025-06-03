@@ -1,0 +1,509 @@
+{
+  "User login attempts with different credentials - one": {
+    "example": {
+      "username": "admin",
+      "password": "wrong",
+      "error": "Invalid credentials",
+      "Scenario": "one"
+    },
+    "steps": [
+      {
+        "step_line": "Given the user is on the login page",
+        "matched_expression": "the user is on the login page",
+        "calls": [
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.goto",
+            "args": [
+              "''"
+            ],
+            "line": 9
+          },
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.navigateToLogin",
+            "args": [],
+            "line": 10
+          }
+        ]
+      },
+      {
+        "step_line": "When the user submits login form with username \"admin\" and password \"wrong\"",
+        "matched_expression": "the user submits login form with username {string} and password {string}",
+        "calls": [
+          {
+            "object": "username",
+            "method": "trim",
+            "args": [],
+            "line": 16
+          },
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.enterUsername",
+            "args": [
+              "username"
+            ],
+            "line": 17
+          },
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.enterPassword",
+            "args": [
+              "password"
+            ],
+            "line": 21
+          },
+          {
+            "object": "console",
+            "method": "log",
+            "args": [
+              "\"\u26d4 No password provided \u2014 skipping field.\""
+            ],
+            "line": 23
+          },
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.clickLogin",
+            "args": [],
+            "line": 26
+          }
+        ]
+      },
+      {
+        "step_line": "Then the error message \"Invalid credentials\" should be displayed",
+        "matched_expression": "the error message {string} should be displayed",
+        "calls": [
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.getErrorMessage",
+            "args": [
+              "','",
+              "''",
+              "\"mysceanrio\""
+            ],
+            "line": 31
+          },
+          {
+            "object": "assert",
+            "method": "strictEqual",
+            "args": [
+              "actualError?.trim()",
+              "expectedError?.trim()"
+            ],
+            "line": 32
+          },
+          {
+            "object": "actualError?",
+            "method": "trim",
+            "args": [],
+            "line": 32
+          },
+          {
+            "object": "expectedError?",
+            "method": "trim",
+            "args": [],
+            "line": 32
+          }
+        ]
+      }
+    ]
+  },
+  "User login attempts with different credentials - two": {
+    "example": {
+      "username": "",
+      "password": "pass123",
+      "error": "Username is required",
+      "Scenario": "two"
+    },
+    "steps": [
+      {
+        "step_line": "Given the user is on the login page",
+        "matched_expression": "the user is on the login page",
+        "calls": [
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.goto",
+            "args": [
+              "''"
+            ],
+            "line": 9
+          },
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.navigateToLogin",
+            "args": [],
+            "line": 10
+          }
+        ]
+      },
+      {
+        "step_line": "When the user submits login form with username \"\" and password \"pass123\"",
+        "matched_expression": "the user submits login form with username {string} and password {string}",
+        "calls": [
+          {
+            "object": "username",
+            "method": "trim",
+            "args": [],
+            "line": 16
+          },
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.enterUsername",
+            "args": [
+              "username"
+            ],
+            "line": 17
+          },
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.enterPassword",
+            "args": [
+              "password"
+            ],
+            "line": 21
+          },
+          {
+            "object": "console",
+            "method": "log",
+            "args": [
+              "\"\u26d4 No password provided \u2014 skipping field.\""
+            ],
+            "line": 23
+          },
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.clickLogin",
+            "args": [],
+            "line": 26
+          }
+        ]
+      },
+      {
+        "step_line": "Then the error message \"Username is required\" should be displayed",
+        "matched_expression": "the error message {string} should be displayed",
+        "calls": [
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.getErrorMessage",
+            "args": [
+              "','",
+              "''",
+              "\"mysceanrio\""
+            ],
+            "line": 31
+          },
+          {
+            "object": "assert",
+            "method": "strictEqual",
+            "args": [
+              "actualError?.trim()",
+              "expectedError?.trim()"
+            ],
+            "line": 32
+          },
+          {
+            "object": "actualError?",
+            "method": "trim",
+            "args": [],
+            "line": 32
+          },
+          {
+            "object": "expectedError?",
+            "method": "trim",
+            "args": [],
+            "line": 32
+          }
+        ]
+      }
+    ]
+  },
+  "User login attempts with different credentials - three": {
+    "example": {
+      "username": "user1",
+      "password": "",
+      "error": "Password is required",
+      "Scenario": "three"
+    },
+    "steps": [
+      {
+        "step_line": "Given the user is on the login page",
+        "matched_expression": "the user is on the login page",
+        "calls": [
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.goto",
+            "args": [
+              "''"
+            ],
+            "line": 9
+          },
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.navigateToLogin",
+            "args": [],
+            "line": 10
+          }
+        ]
+      },
+      {
+        "step_line": "When the user submits login form with username \"user1\" and password \"\"",
+        "matched_expression": "the user submits login form with username {string} and password {string}",
+        "calls": [
+          {
+            "object": "username",
+            "method": "trim",
+            "args": [],
+            "line": 16
+          },
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.enterUsername",
+            "args": [
+              "username"
+            ],
+            "line": 17
+          },
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.enterPassword",
+            "args": [
+              "password"
+            ],
+            "line": 21
+          },
+          {
+            "object": "console",
+            "method": "log",
+            "args": [
+              "\"\u26d4 No password provided \u2014 skipping field.\""
+            ],
+            "line": 23
+          },
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.clickLogin",
+            "args": [],
+            "line": 26
+          }
+        ]
+      },
+      {
+        "step_line": "Then the error message \"Password is required\" should be displayed",
+        "matched_expression": "the error message {string} should be displayed",
+        "calls": [
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.getErrorMessage",
+            "args": [
+              "','",
+              "''",
+              "\"mysceanrio\""
+            ],
+            "line": 31
+          },
+          {
+            "object": "assert",
+            "method": "strictEqual",
+            "args": [
+              "actualError?.trim()",
+              "expectedError?.trim()"
+            ],
+            "line": 32
+          },
+          {
+            "object": "actualError?",
+            "method": "trim",
+            "args": [],
+            "line": 32
+          },
+          {
+            "object": "expectedError?",
+            "method": "trim",
+            "args": [],
+            "line": 32
+          }
+        ]
+      }
+    ]
+  },
+  "User login attempts with different credentials - four": {
+    "example": {
+      "username": "",
+      "password": "",
+      "error": "Username is required",
+      "Scenario": "four"
+    },
+    "steps": [
+      {
+        "step_line": "Given the user is on the login page",
+        "matched_expression": "the user is on the login page",
+        "calls": [
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.goto",
+            "args": [
+              "''"
+            ],
+            "line": 9
+          },
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.navigateToLogin",
+            "args": [],
+            "line": 10
+          }
+        ]
+      },
+      {
+        "step_line": "When the user submits login form with username \"\" and password \"\"",
+        "matched_expression": "the user submits login form with username {string} and password {string}",
+        "calls": [
+          {
+            "object": "username",
+            "method": "trim",
+            "args": [],
+            "line": 16
+          },
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.enterUsername",
+            "args": [
+              "username"
+            ],
+            "line": 17
+          },
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.enterPassword",
+            "args": [
+              "password"
+            ],
+            "line": 21
+          },
+          {
+            "object": "console",
+            "method": "log",
+            "args": [
+              "\"\u26d4 No password provided \u2014 skipping field.\""
+            ],
+            "line": 23
+          },
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.clickLogin",
+            "args": [],
+            "line": 26
+          }
+        ]
+      },
+      {
+        "step_line": "Then the error message \"Username is required\" should be displayed",
+        "matched_expression": "the error message {string} should be displayed",
+        "calls": [
+          {
+            "object": "pageObjects",
+            "method": "LoginPage.getErrorMessage",
+            "args": [
+              "','",
+              "''",
+              "\"mysceanrio\""
+            ],
+            "line": 31
+          },
+          {
+            "object": "assert",
+            "method": "strictEqual",
+            "args": [
+              "actualError?.trim()",
+              "expectedError?.trim()"
+            ],
+            "line": 32
+          },
+          {
+            "object": "actualError?",
+            "method": "trim",
+            "args": [],
+            "line": 32
+          },
+          {
+            "object": "expectedError?",
+            "method": "trim",
+            "args": [],
+            "line": 32
+          }
+        ]
+      }
+    ]
+  },
+  "New User Registration": {
+    "example": {},
+    "steps": [
+      {
+        "step_line": "Given I am on the registration page",
+        "matched_expression": "I am on the registration page",
+        "calls": [
+          {
+            "object": "pageObjects",
+            "method": "RegisterPage.goto",
+            "args": [
+              "\"customer/account/create/\""
+            ],
+            "line": 9
+          }
+        ]
+      },
+      {
+        "step_line": "When I fill in the registration form with valid data",
+        "matched_expression": "I fill in the registration form with valid data",
+        "calls": [
+          {
+            "object": "dataTable",
+            "method": "hashes",
+            "args": [],
+            "line": 13
+          },
+          {
+            "object": "pageObjects",
+            "method": "RegisterPage.fillRegisterForm",
+            "args": [
+              "this",
+              "data.firstname",
+              "data.lastname",
+              "data.email",
+              "data.password"
+            ],
+            "line": 15
+          }
+        ]
+      },
+      {
+        "step_line": "And I submit the form",
+        "matched_expression": "I submit the form",
+        "calls": [
+          {
+            "object": "pageObjects",
+            "method": "RegisterPage.submitRegisterForm",
+            "args": [],
+            "line": 19
+          }
+        ]
+      },
+      {
+        "step_line": "Then I validate the registration",
+        "matched_expression": "I validate the registration",
+        "calls": [
+          {
+            "object": "pageObjects",
+            "method": "RegisterPage.validateRegistration",
+            "args": [
+              "this.data.firstname",
+              "this.data.lastname",
+              "this.data.email"
+            ],
+            "line": 23
+          }
+        ]
+      }
+    ]
+  }
+}
